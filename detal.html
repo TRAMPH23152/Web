@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./angular.min.js"></script>
+    <script type="module" src="./app.js"></script>
+    <script src="./db.json"></script>
+    </style>
+  </head>
+  <body ng-app="app" ng-controller="myController">
+
+    <nav class="navbar bg-primary">
+        <div class="container d-flex">
+          <a class="navbar-brand" href="#">
+            <img src="./logo.png" alt="Bootstrap" width="100" />
+          </a>
+  
+          <form class="d-flex flex-grow-1" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+          <div class="p-3">
+            <img src="./Rectangle.png" alt="" />
+            <a class="text-white" style="text-decoration: none" href="#"
+              >Dang Nhap</a
+            >
+            <a class="text-white" style="text-decoration: none" href="#"
+              >Dang Ki</a
+            >
+          </div>
+          <div>
+            <img src="./giahang.png" alt=""> 
+            <a class="text-white" style="text-decoration: none" href="#"
+            >Gio Hang</a
+          >
+          </div>
+        </div>
+      </nav>
+      <!-- San Pham Ct -->
+      <div class="container">
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-10 p-3">
+            <div class="card-md mb-3" style="max-width: 740px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="https://salt.tikicdn.com/ts/product/82/82/80/c542073200c6e95d3e89840b2f41ce2e.jpg" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Bí Kíp Sống Sót Nơi Công Sở</h5>
+                    <img src="image/star-fill.svg" alt=""> 
+                    <img src="image/star-fill.svg" alt="">
+                    <img src="image/star-fill.svg" alt="">
+                    <img src="image/star-fill.svg" alt="">
+                    <img src="image/star-fill.svg" alt="">
+                    <div class="d-flex">
+                      <p class="text-body-tertiary">(Xem 291 đánh giá)</p>
+                      <p class="text-body-tertiary">   | Đã bán 1000+</p>
+                    </div>
+                    <h4 style="color: crimson;">93.850đ</h4> 
+                    <h6>Giá Cũ : 109.000đ</h6>
+                    <img src="image/aaa.png" width="9%" alt="">
+                    <div class="product-count">
+                      <label for="size">Số lượng</label> <br>
+                      <form action="#" class="d-flex">
+                      <div class="qtyminus">-</div>
+                      <input type="text" name="quantity" value="" class="qty">
+                      <div class="qtyplus">+</div>
+                    </form> <br><br>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                      <button class="btn btn-danger" type="button">Chọn mua</button>
+                    </div>             
+                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!-- Sản Phẩm Tương Tự  -->
+      <div class="container">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10"><h3>Sản Phẩm Tương Tự</h3></div>
+            
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-1"></div>
+          <div class="col-10 d-flex flex-wrap">
+            <div class="card-md m-4 " style="width: 100px;" ng-repeat="book in data" >
+                <div ng-if="$index === 0">
+                    <!-- {{book.name}} -->
+                <img src="{{book.images[0]}}" class="card-img-top" alt="..."/>
+                <div class="card-body">
+                    <h5 class="card-title " style="font-size: 14px; line-height: 18px; max-height: 36px; overflow: hidden;">{{book.name}}</h5>                
+                      <!-- <p class="card-text">{{book.short_description}}</p> -->
+                      <div class="d-flex p-1" style="font-size: 5px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 12px; ">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <p style="margin-bottom: 0;">| Đã Bán 10 +</p>
+                      </div>
+                  <div class="text-danger">{{book.original_price}}</div>
+                  <div><img src="./daban.png" alt=""></div>
+                </div>
+                </div>
+                <!-- 2 -->
+                <div ng-if="$index === 1">
+                    <!-- {{book.name}} -->
+                <img src="{{book.images[0]}}" class="card-img-top" alt="..."/>
+                <div class="card-body">
+                    <h5 class="card-title " style="font-size: 14px; line-height: 18px; max-height: 36px; overflow: hidden;">{{book.name}}</h5>                
+                      <!-- <p class="card-text">{{book.short_description}}</p> -->
+                      <div class="d-flex p-1" style="font-size: 5px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 12px; ">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <p style="margin-bottom: 0;">| Đã Bán 10 +</p>
+                      </div>
+                  <div class="text-danger">{{book.original_price}}</div>
+                  <div><img src="./daban.png" alt=""></div>
+                </div>
+                </div>
+                <!-- 3 -->
+                <div ng-if="$index === 2">
+                  <!-- {{book.name}} -->
+                <img src="{{book.images[0]}}" class="card-img-top" alt="..."/>
+                <div class="card-body">
+                    <h5 class="card-title " style="font-size: 14px; line-height: 18px; max-height: 36px; overflow: hidden;">{{book.name}}</h5>                
+                      <!-- <p class="card-text">{{book.short_description}}</p> -->
+                      <div class="d-flex p-1" style="font-size: 5px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 12px; ">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <p style="margin-bottom: 0;">| Đã Bán 10 +</p>
+                      </div>
+                  <div class="text-danger">{{book.original_price}}</div>
+                  <div><img src="./daban.png" alt=""></div>
+                </div>
+                </div>
+                <!-- 4 -->
+                <div ng-if="$index === 3">
+                    <!-- {{book.name}} -->
+                <img src="{{book.images[0]}}" class="card-img-top" alt="..."/>
+                <div class="card-body">
+                    <h5 class="card-title " style="font-size: 14px; line-height: 18px; max-height: 36px; overflow: hidden;">{{book.name}}</h5>                
+                      <!-- <p class="card-text">{{book.short_description}}</p> -->
+                      <div class="d-flex p-1" style="font-size: 5px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 12px; ">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <p style="margin-bottom: 0;">| Đã Bán 10 +</p>
+                      </div>
+                  <div class="text-danger">{{book.original_price}}</div>
+                  <div><img src="./daban.png" alt=""></div>
+                </div>
+                </div>
+                <!-- 5 -->
+                <div ng-if="$index === 4">
+                    <!-- {{book.name}} -->
+                <img src="{{book.images[0]}}" class="card-img-top" alt="..."/>
+                <div class="card-body">
+                    <h5 class="card-title " style="font-size: 14px; line-height: 18px; max-height: 36px; overflow: hidden;">{{book.name}}</h5>                
+                      <!-- <p class="card-text">{{book.short_description}}</p> -->
+                      <div class="d-flex p-1" style="font-size: 5px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 12px; ">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <p style="margin-bottom: 0;">| Đã Bán 10 +</p>
+                      </div>
+                  <div class="text-danger">{{book.original_price}}</div>
+                  <div><img src="./daban.png" alt=""></div>
+                </div>
+                </div>
+                <!-- 6 -->
+                <div ng-if="$index === 5">
+                    <!-- {{book.name}} -->
+                <img src="{{book.images[0]}}" class="card-img-top" alt="..."/>
+                <div class="card-body">
+                    <h5 class="card-title " style="font-size: 14px; line-height: 18px; max-height: 36px; overflow: hidden;">{{book.name}}</h5>                
+                      <!-- <p class="card-text">{{book.short_description}}</p> -->
+                      <div class="d-flex p-1" style="font-size: 5px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 12px; ">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <img src="./Vector.png" alt="" style="width: 11px ; height: 11px;">
+                        <p style="margin-bottom: 0;">| Đã Bán 10 +</p>
+                      </div>
+                  <div class="text-danger">{{book.original_price}}</div>
+                  <div><img src="./daban.png" alt=""></div>
+                </div>
+                </div>
+              </div>
+          </div>
+          <div class="col-1"></div>
+        </div>
+      </div>
+      <!-- Mo ta san Pham -->
+      <div class="container">
+        <div class="row">
+            <div class="col-1"> </div>
+          <div class="col-8">
+            <div ng-repeat="book in data">
+                <div ng-if="$index === 0" class="card-body">
+                    <h3>Mô Tả Sản Phẩm </h3>
+                      <p class="card-text">{{book.description}}</p>
+                      <div class="d-grid gap-2 col-6 mx-auto">
+                        <button  type="button" class="btn btn-outline-primary m-4">Xem Thêm Thông Tin </button>
+                      </div>
+                     
+                </div>
+              
+            </div>
+          </div>
+          </div>
+          <div class="col-3"></div>
+        </div>
+
+
+
+
+
+
+
+    <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-1"></div>
+        <!-- Cột trống bên trái -->
+
+        <div class="col-2">
+          <h4>Hỗ Trợ Khách Hàng</h4>
+          <p>Hotline:1900-6035</p>
+          <p>(1000 đ/phút, 8-21h kể cả T7, CN)</p>
+          <p>Các câu hỏi thường gặp</p>
+          <p>Gửi yêu cầu hỗ trợ</p>
+          <p>Hướng dẫn đặt hàng</p>
+          <p>Hỗ trợ khách hàng:</p>
+          <p>hotro@tiki.vn</p>
+          <p>Báo lỗi bảo mật:</p>
+          <p>security@tiki.vn</p>
+        </div>
+
+        <div class="col-2">
+          <h4>Về TiKi</h4>
+          <p>Giới thiệu Tiki</p>
+          <p>Tuyển dụng</p>
+          <p>Chính sách bảo mật thanh toán</p>
+          <p>Chính sách bảo mật thông tin cá nhân</p>
+          <p>Chính sách giải quyết khiếu nại</p>
+          <p>Điều khoản sử dụng</p>
+          <p>Bán hàng doanh nghiệp</p>
+          <p>Điều kiện vận chuyển</p>
+        </div>
+
+        <div class="col-2">
+          <h4>Hợp Tác Và Liên Kết</h4>
+          <p>Quy chế hoạt động Sàn GDTMĐT</p>
+          <p>Bán hàng cùng Tiki</p>
+          <h4 class="p-3">Chứng Nhận Bởi</h4>
+          <img src="./logo1.png" alt="" />
+          <img src="./logo2.png" alt="" />
+        </div>
+
+        <div class="col-2">
+          <h4>Phương Thức Thanh Toán</h4>
+          <img src="./Frame-1.png" alt="" />
+          <img src="./Frame-2.png" alt="" />
+          <img src="./Frame-3.png" alt="" />
+          <img src="./Frame-4.png" alt="" />
+          <img src="./Frame-5.png" alt="" />
+          <img src="./Frame-6.png" alt="" />
+          <img src="./Frame-7.png" alt="" />
+          <img src="./Frame-8.png" alt="" />
+          <img src="./Frame-9.png" alt="" />
+          <img src="./Frame-10.png" alt="" />
+          <img src="./Frame-11.png" alt="" />
+          <h4 class="p-3">Dịch Vụ Giao Hàng</h4>
+          <img src="./export.png" alt="" />
+        </div>
+
+        <div class="col-2">
+          <h4>Liên Hệ</h4>
+          <img style="padding-right: 2px" src="./img/Frame-1.png" alt="" />
+          <img src="./img/Frame-2.png" alt="" />
+          <img src="./img/Frame.png" alt="" />
+        </div>
+
+        <div class="col-1"></div>
+        <!-- Cột trống bên phải -->
+      </div>
+    </div>
+  </footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+        <!-- Nội dung cột 1 -->
+      </div>
+      <div class="col-md-10">
+        <hr style="border-top: 2px solid gray;">
+        <p>
+          Trụ sở chính: Tòa nhà Viettel, Số 285, đường Cách Mạng Tháng 8,
+          phường 12, quận 10, Thành phố Hồ Chí Minh
+        </p>
+        <p>
+          Tiki nhận đặt hàng trực tuyến và giao hàng tận nơi, chưa hỗ trợ mua
+          và nhận hàng trực tiếp tại văn phòng hoặc trung tâm xử lý đơn hàng
+        </p>
+        <p>
+          Giấy chứng nhận Đăng ký Kinh doanh số 0309532909 do Sở Kế hoạch và
+          Đầu tư Thành phố Hồ Chí Minh cấp lần đầu ngày 06/01/2010 và sửa đổi
+          lần thứ 23 ngày 14/02/2022
+        </p>
+        <p>© 2022 - Bản quyền của Công ty TNHH Ti Ki</p>
+      </div>
+      <div class="col-md-1">
+        <!-- Nội dung cột 3 -->
+      </div>
+    </div>
+  </div>
+</body>
+</html>
